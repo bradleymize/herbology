@@ -1,0 +1,37 @@
+@import "../../../variables";
+$total-space-around: 5px;
+$border-width: 3px;
+
+.ingredient-wrapper {
+  max-width: $input-width;
+  max-height: $input-width;
+  width: $input-width;
+  height: $input-width;
+  text-align: center;
+  padding-top: $border-width;
+  padding-bottom: $border-width;
+  margin-left: $total-space-around;
+  margin-right: $total-space-around;
+}
+.ingredient-item {
+  max-width: $input-width;
+  max-height: $input-width;
+}
+.ingredient-excess {
+  border-width: $border-width;
+  border-style: solid;
+  border-color: $excess-color;
+  margin-left: $total-space-around - $border-width;
+  margin-right: $total-space-around - $border-width;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ingredient-missing {
+  border-width: $border-width;
+  border-style: solid;
+  border-color: $missing-color;
+  margin-left: $total-space-around - $border-width;
+  margin-right: $total-space-around - $border-width;
+  padding-top: 0;
+  padding-bottom: 0;
+}
