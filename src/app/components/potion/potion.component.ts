@@ -59,6 +59,7 @@ export class PotionComponent implements OnInit {
     });
     this.allIngredientsMissing = allIngredientsMissing;
     this.ingredients.forEach(i => {
+      i.mostCanMake = mostCanMake;
       i.totalRequired = mostCanMake * i.quantity;
       i.canToss = Math.max(0, i.have - i.totalRequired);
     });

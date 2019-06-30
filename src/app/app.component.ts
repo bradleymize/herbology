@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   ingredients = [];
   potions = [];
   ingredientCount = {};
-  hidden = false;
+  hideIngredients = false;
+  hidePotions = false;
   excessMap = {};
 
   constructor(
@@ -24,6 +25,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.ingredientCount = this.localStorageService.get();
+    this.hideIngredients = this.localStorageService.getIngredientVisibility();
+    this.hidePotions = this.localStorageService.getPotionVisibility();
     this.ingredientService.list().subscribe( data => {
       data.sort((a, b) => {
         return a.name.localeCompare(b.name);
@@ -35,13 +38,29 @@ export class AppComponent implements OnInit {
     });
   }
 
+  increment(item): void {
+    this.updateLocalStorage({
+      name: item.key,
+      value: this.ingredientCount[item.key] + 1
+    });
+  }
+
   updateLocalStorage(event): void {
     this.ingredientCount[event.name] = event.value;
     this.localStorageService.save(this.ingredientCount);
   };
 
+  toggleIngredients(): void {
+    this.hideIngredients = !this.hideIngredients;
+    this.localStorageService.saveIngredientVisibility(this.hideIngredients);
+  };
+
+  togglePotions(): void {
+    this.hidePotions = !this.hidePotions;
+    this.localStorageService.savePotionVisibility(this.hidePotions);
+  };
+
   processExcess(ingredientList): void {
-    console.log(ingredientList);
     ingredientList.forEach(i => {
       if(i.canToss > 0) {
         if(!this.excessMap[i.name]) {
@@ -49,10 +68,13 @@ export class AppComponent implements OnInit {
           this.excessMap[i.name] = {
             canToss: i.canToss,
             isGreenhouse: i.isGreenhouse,
-            rarity: i.rarity
+            rarity: i.rarity,
+            mostCanMake: i.mostCanMake,
+            canBeMade: i.mostCanMake > 0
           };
         } else {
-          this.excessMap[i.name] = Math.min(this.excessMap[i.name].canToss, i.canToss);
+          //TODO: Handle ingredients used in multiple recipes (e.g. Exstimulo potions), use Math.min?
+          this.excessMap[i.name].canToss = i.canToss;
         }
       }
     });
