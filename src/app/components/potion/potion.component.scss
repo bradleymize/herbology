@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+.potion-wrapper {
+  max-width: $input-width;
+  max-height: $input-width;
+  width: $input-width;
+  height: $input-width;
+  text-align: center;
+  display: inline-block;
+}
+.potion-item {
+  max-width: $input-width;
+  max-height: $input-width;
+}
+.ingredient-wrapper {
+  display: inline-block;
+}
+.ingredient-item {
+  position: relative;
+}
+.ingredient-quantity {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+.ingredient-toss {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  color: $excess-color;
+  font-weight: bold;
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "name": "Abraxan Hair",
+    "asset": "abraxanhair.png",
+    "key": "abraxanhair"
+  },
+  {
+    "id": 2,
+    "name": "Armadillo Bile",
+    "asset": "armadillobile.png",
+    "key": "armadillobile"
+  },
+  {
+    "id": 3,
+    "name": "Bitter Root",
+    "asset": "bitterroot.png",
+    "key": "bitterroot"
+  },
+  {
+    "id": 4,
+    "name": "Bubotuber Pus",
+    "asset": "bubotuberpus.png",
+    "key": "bubotuberpus"
+  },
+  {
+    "id": 5,
+    "name": "Butterscotch",
+    "asset": "butterscotch.png",
+    "key": "butterscotch"
+  },
+  {
+    "id": 6,
+    "name": "Dittany",
+    "asset": "dittany.png",
+    "key": "dittany"
+  },
+  {
+    "id": 7,
+    "name": "Dragon Liver",
+    "asset": "dragonliver.png",
+    "key": "dragonliver"
+  },
+  {
+    "id": 8,
+    "name": "Frog Brain",
+    "asset": "frogbrains.png",
+    "key": "frogbrains"
+  },
+  {
+    "id": 9,
+    "name": "Ginger Root",
+    "asset": "gingerroot.png",
+    "key": "gingerroot"
+  },
+  {
+    "id": 10,
+    "name": "Granian Hair",
+    "asset": "granianhair.png",
+    "key": "granianhair"
+  },
+  {
+    "id": 11,
+    "name": "Ground Scarab Beetles",
+    "asset": "groundscarabbeetles.png",
+    "key": "groundscarabbeetles"
+  },
+  {
+    "id": 12,
+    "name": "Hermit Crab Shell",
+    "asset": "hermitcrabshell.png",
+    "key": "hermitcrabshell"
+  },
+  {
+    "id": 13,
+    "name": "Honeywater",
+    "asset": "honeywater.png",
+    "key": "honeywater"
+  },
+  {
+    "id": 14,
+    "name": "Leaping Toadstool",
+    "asset": "leapingtoadstool.png",
+    "key": "leapingtoadstool"
+  },
+  {
+    "id": 15,
+    "name": "Lovage",
+    "asset": "lovage.png",
+    "key": "lovage"
+  },
+  {
+    "id": 16,
+    "name": "Newt Spleen",
+    "asset": "newtspleen.png",
+    "key": "newtspleen"
+  },
+  {
+    "id": 17,
+    "name": "Powdered Dragon Claw",
+    "asset": "powdereddragonclaw.png",
+    "key": "powdereddragonclaw"
+  },
+  {
+    "id": 18,
+    "name": "Re'em Blood",
+    "asset": "reemblood.png",
+    "key": "reemblood"
+  },
+  {
+    "id": 19,
+    "name": "Runespoor Eggs",
+    "asset": "runespooreggs.png",
+    "key": "runespooreggs"
+  },
+  {
+    "id": 20,
+    "name": "Scurvygrass",
+    "asset": "scurvygrass.png",
+    "key": "scurvygrass"
+  },
+  {
+    "id": 21,
+    "name": "Sneezewort",
+    "asset": "sneezewort.png",
+    "key": "sneezewort"
+  },
+  {
+    "id": 22,
+    "name": "Snowdrop",
+    "asset": "snowdrop.png",
+    "key": "snowdrop"
+  },
+  {
+    "id": 23,
+    "name": "Sopophorous Bean",
+    "asset": "sopophorousbean.png",
+    "key": "sopophorousbean"
+  },
+  {
+    "id": 24,
+    "name": "Unicorn Hair",
+    "asset": "unicornhair.png",
+    "key": "unicornhair"
+  },
+  {
+    "id": 25,
+    "name": "Valerian Root",
+    "asset": "valerianroot.png",
+    "key": "valerianroot"
+  },
+  {
+    "id": 26,
+    "name": "Vervain Infusion",
+    "asset": "vervain.png",
+    "key": "vervain"
+  },
+  {
+    "id": 27,
+    "name": "Wormwood",
+    "asset": "wormwood.png",
+    "key": "wormwood"
+  }
+]
