@@ -52,15 +52,59 @@
         "quantity": 1
       },
       {
-        "name": "reemblood",
-        "quantity": 1
-      },
-      {
         "name": "snowdrop",
         "quantity": 1
       },
       {
+        "name": "reemblood",
+        "quantity": 1
+      },
+      {
         "name": "granianhair",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Strong Exstimulo Potion",
+    "asset": "Exstimulo.png",
+    "ingredients": [
+      {
+        "name": "bitterroot",
+        "quantity": 3
+      },
+      {
+        "name": "snowdrop",
+        "quantity": 4
+      },
+      {
+        "name": "reemblood",
+        "quantity": 1
+      },
+      {
+        "name": "abraxanhair",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Potent Exstimulo Potion",
+    "asset": "Exstimulo_strong.png",
+    "ingredients": [
+      {
+        "name": "bitterroot",
+        "quantity": 4
+      },
+      {
+        "name": "snowdrop",
+        "quantity": 6
+      },
+      {
+        "name": "reemblood",
+        "quantity": 2
+      },
+      {
+        "name": "unicornhair",
         "quantity": 1
       }
     ]
@@ -106,50 +150,6 @@
       {
         "name": "lovage",
         "quantity": 2
-      }
-    ]
-  },
-  {
-    "name": "Potent Exstimulo Potion",
-    "asset": "Exstimulo_strong.png",
-    "ingredients": [
-      {
-        "name": "bitterroot",
-        "quantity": 4
-      },
-      {
-        "name": "snowdrop",
-        "quantity": 6
-      },
-      {
-        "name": "reemblood",
-        "quantity": 2
-      },
-      {
-        "name": "unicornhair",
-        "quantity": 1
-      }
-    ]
-  },
-  {
-    "name": "Strong Exstimulo Potion",
-    "asset": "Exstimulo.png",
-    "ingredients": [
-      {
-        "name": "bitterroot",
-        "quantity": 3
-      },
-      {
-        "name": "snowdrop",
-        "quantity": 4
-      },
-      {
-        "name": "abraxanhair",
-        "quantity": 1
-      },
-      {
-        "name": "reemblood",
-        "quantity": 1
       }
     ]
   },

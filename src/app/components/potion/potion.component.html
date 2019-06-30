@@ -1,12 +1,10 @@
-<div class="potion-wrapper">
-  <img [src]="'assets/' + potion.asset" [alt]="potion.name" class="potion-item">
-</div>
-<div class="ingredient-wrapper">
-  <div class="flex-wrapper">
-    <div *ngFor="let item of ingredients" class="ingredient-item">
-      <span class="ingredient-quantity">{{item.quantity}}</span>
-      <app-ingredient [item]="item"  [isExcess]="item.have > item.totalRequired" [isMissing]="item.have === 0 && !allIngredientsMissing"></app-ingredient>
-      <span class="ingredient-toss" *ngIf="item.have - item.totalRequired > 0">{{item.have - item.totalRequired}}</span>
-    </div>
+<div class="flex-wrapper">
+  <div class="potion-wrapper">
+    <img [src]="'assets/' + potion.asset" [alt]="potion.name" [title]="potion.name" class="potion-item">
+  </div>
+  <div *ngFor="let item of ingredients" class="ingredient-item">
+    <span class="ingredient-quantity">{{item.quantity}}</span>
+    <app-ingredient [item]="item"  [isExcess]="item.have > item.totalRequired" [isMissing]="item.have === 0 && !allIngredientsMissing"></app-ingredient>
+    <span class="ingredient-toss" *ngIf="item.canToss > 0">{{item.canToss}}</span>
   </div>
 </div>

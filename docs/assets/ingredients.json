@@ -3,162 +3,243 @@
     "id": 1,
     "name": "Abraxan Hair",
     "asset": "abraxanhair.png",
-    "key": "abraxanhair"
+    "key": "abraxanhair",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown":false
   },
   {
     "id": 2,
     "name": "Armadillo Bile",
     "asset": "armadillobile.png",
-    "key": "armadillobile"
+    "key": "armadillobile",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 3,
     "name": "Bitter Root",
     "asset": "bitterroot.png",
-    "key": "bitterroot"
+    "key": "bitterroot",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 4,
     "name": "Bubotuber Pus",
     "asset": "bubotuberpus.png",
-    "key": "bubotuberpus"
+    "key": "bubotuberpus",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown": false
   },
   {
     "id": 5,
     "name": "Butterscotch",
     "asset": "butterscotch.png",
-    "key": "butterscotch"
+    "key": "butterscotch",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 6,
     "name": "Dittany",
     "asset": "dittany.png",
-    "key": "dittany"
+    "key": "dittany",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 7,
     "name": "Dragon Liver",
     "asset": "dragonliver.png",
-    "key": "dragonliver"
+    "key": "dragonliver",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 8,
     "name": "Frog Brain",
     "asset": "frogbrains.png",
-    "key": "frogbrains"
+    "key": "frogbrains",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown": false
   },
   {
     "id": 9,
     "name": "Ginger Root",
     "asset": "gingerroot.png",
-    "key": "gingerroot"
+    "key": "gingerroot",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 10,
     "name": "Granian Hair",
     "asset": "granianhair.png",
-    "key": "granianhair"
+    "key": "granianhair",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 11,
     "name": "Ground Scarab Beetles",
     "asset": "groundscarabbeetles.png",
-    "key": "groundscarabbeetles"
+    "key": "groundscarabbeetles",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown": false
   },
   {
     "id": 12,
     "name": "Hermit Crab Shell",
     "asset": "hermitcrabshell.png",
-    "key": "hermitcrabshell"
+    "key": "hermitcrabshell",
+    "isGreenhouse": false,
+    "rarity": "rare",
+    "isGrown": false
   },
   {
     "id": 13,
     "name": "Honeywater",
     "asset": "honeywater.png",
-    "key": "honeywater"
+    "key": "honeywater",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown": false
   },
   {
     "id": 14,
     "name": "Leaping Toadstool",
     "asset": "leapingtoadstool.png",
-    "key": "leapingtoadstool"
+    "key": "leapingtoadstool",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 15,
     "name": "Lovage",
     "asset": "lovage.png",
-    "key": "lovage"
+    "key": "lovage",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 16,
     "name": "Newt Spleen",
     "asset": "newtspleen.png",
-    "key": "newtspleen"
+    "key": "newtspleen",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown": false
   },
   {
     "id": 17,
     "name": "Powdered Dragon Claw",
     "asset": "powdereddragonclaw.png",
-    "key": "powdereddragonclaw"
+    "key": "powdereddragonclaw",
+    "isGreenhouse": false,
+    "rarity": "rare",
+    "isGrown": false
   },
   {
     "id": 18,
     "name": "Re'em Blood",
     "asset": "reemblood.png",
-    "key": "reemblood"
+    "key": "reemblood",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 19,
     "name": "Runespoor Eggs",
     "asset": "runespooreggs.png",
-    "key": "runespooreggs"
+    "key": "runespooreggs",
+    "isGreenhouse": false,
+    "rarity": "uncommon",
+    "isGrown": false
   },
   {
     "id": 20,
     "name": "Scurvygrass",
     "asset": "scurvygrass.png",
-    "key": "scurvygrass"
+    "key": "scurvygrass",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 21,
     "name": "Sneezewort",
     "asset": "sneezewort.png",
-    "key": "sneezewort"
+    "key": "sneezewort",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 22,
     "name": "Snowdrop",
     "asset": "snowdrop.png",
-    "key": "snowdrop"
+    "key": "snowdrop",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 23,
     "name": "Sopophorous Bean",
     "asset": "sopophorousbean.png",
-    "key": "sopophorousbean"
+    "key": "sopophorousbean",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 24,
     "name": "Unicorn Hair",
     "asset": "unicornhair.png",
-    "key": "unicornhair"
+    "key": "unicornhair",
+    "isGreenhouse": false,
+    "rarity": "rare",
+    "isGrown": false
   },
   {
     "id": 25,
     "name": "Valerian Root",
     "asset": "valerianroot.png",
-    "key": "valerianroot"
+    "key": "valerianroot",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   },
   {
     "id": 26,
     "name": "Vervain Infusion",
     "asset": "vervain.png",
-    "key": "vervain"
+    "key": "vervain",
+    "isGreenhouse": false,
+    "rarity": "common",
+    "isGrown": false
   },
   {
     "id": 27,
     "name": "Wormwood",
     "asset": "wormwood.png",
-    "key": "wormwood"
+    "key": "wormwood",
+    "isGreenhouse": true,
+    "rarity": "common",
+    "isGrown": true
   }
 ]

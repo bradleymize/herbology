@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   potions = [];
   ingredientCount = {};
   hidden = false;
+  excessMap = {};
 
   constructor(
     private ingredientService: IngredientService,
@@ -30,9 +31,6 @@ export class AppComponent implements OnInit {
       this.ingredients = data;
     });
     this.potionService.list().subscribe( data => {
-      data.sort((a, b) => {
-        return a.name.localeCompare(b.name);
-      });
       this.potions = data;
     });
   }
@@ -41,4 +39,22 @@ export class AppComponent implements OnInit {
     this.ingredientCount[event.name] = event.value;
     this.localStorageService.save(this.ingredientCount);
   };
+
+  processExcess(ingredientList): void {
+    console.log(ingredientList);
+    ingredientList.forEach(i => {
+      if(i.canToss > 0) {
+        if(!this.excessMap[i.name]) {
+          //add more properties here if you want to filter on them
+          this.excessMap[i.name] = {
+            canToss: i.canToss,
+            isGreenhouse: i.isGreenhouse,
+            rarity: i.rarity
+          };
+        } else {
+          this.excessMap[i.name] = Math.min(this.excessMap[i.name].canToss, i.canToss);
+        }
+      }
+    });
+  }
 }

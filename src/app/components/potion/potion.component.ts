@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IngredientService} from "../../services/ingredient.service";
 import {LocalStorageService} from "../../services/local-storage.service";
 
@@ -10,6 +10,7 @@ import {LocalStorageService} from "../../services/local-storage.service";
 export class PotionComponent implements OnInit {
   @Input() potion: any;
   @Input() vault: any;
+  @Output() excessIngredients = new EventEmitter();
   ingredients = [];
   allIngredientsMissing = true;
 
@@ -59,6 +60,8 @@ export class PotionComponent implements OnInit {
     this.allIngredientsMissing = allIngredientsMissing;
     this.ingredients.forEach(i => {
       i.totalRequired = mostCanMake * i.quantity;
+      i.canToss = Math.max(0, i.have - i.totalRequired);
     });
+    this.excessIngredients.emit(this.ingredients);
   }
 }

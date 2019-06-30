@@ -6,12 +6,14 @@ import {HttpClientModule} from "@angular/common/http";
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 import {FormsModule} from "@angular/forms";
 import { PotionComponent } from './components/potion/potion.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     IngredientComponent,
-    PotionComponent
+    PotionComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
