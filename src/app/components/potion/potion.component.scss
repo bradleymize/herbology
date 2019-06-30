@@ -12,9 +12,6 @@
   max-width: $input-width;
   max-height: $input-width;
 }
-.ingredient-wrapper {
-  display: inline-block;
-}
 .ingredient-item {
   position: relative;
 }
@@ -29,4 +26,8 @@
   left: 5px;
   color: $excess-color;
   font-weight: bold;
+}
+.flex-wrapper {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }

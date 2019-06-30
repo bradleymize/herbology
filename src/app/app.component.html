@@ -1,5 +1,5 @@
 <button (click)="hidden = !hidden">{{hidden ? 'Show' : 'Hide'}} Ingredients</button>
-<span class="version">Version 0.0.1</span>
+<span class="version">Version 0.0.2</span>
 <form *ngIf="!hidden">
   <div class="flex-wrapper">
     <div *ngFor="let item of ingredients" class="wrapper-item">
@@ -10,5 +10,23 @@
 </form>
 <hr>
 <div *ngFor="let item of potions" class="potion-list">
-  <app-potion [potion]="item" [vault]="ingredientCount"></app-potion>
+  <app-potion [potion]="item" [vault]="ingredientCount" (excessIngredients)="processExcess($event)"></app-potion>
 </div>
+<p>
+  Can safely toss in order of rarity:
+</p>
+<ul class="ingredient-toss-list">
+  <li><span class="text-bold">Collected from greenhouses:</span></li>
+  <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: true}">{{item.value.canToss}} {{item.key}}</li>
+</ul>
+<ul class="ingredient-toss-list">
+  <li><span class="text-bold">Collected from the map:</span></li>
+  <li><span class="text-bold">Common:</span></li>
+  <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: false, rarity: 'common'}">{{item.value.canToss}} {{item.key}}</li>
+  <li>&nbsp;</li>
+  <li><span class="text-bold">Uncommon:</span></li>
+  <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: false, rarity: 'uncommon'}">{{item.value.canToss}} {{item.key}}</li>
+  <li>&nbsp;</li>
+  <li><span class="text-bold">Rare: DON'T GET RID OF THESE</span></li>
+  <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: false, rarity: 'rare'}" class="strikethrough">{{item.value.canToss}} {{item.key}}</li>
+</ul>
