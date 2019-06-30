@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Baruffio's Brain Elixir",
+    "asset": "BaruffiosBrainElixir.png",
+    "ingredients": [
+      {
+        "name":  "leapingtoadstool",
+        "quantity": 2
+      },
+      {
+        "name": "frogbrains",
+        "quantity": 2
+      },
+      {
+        "name": "runespooreggs",
+        "quantity": 1
+      },
+      {
+        "name": "powdereddragonclaw",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Dawdle Draught",
+    "asset": "DawdleDraught.png",
+    "ingredients": [
+      {
+        "name": "valerianroot",
+        "quantity": 2
+      },
+      {
+        "name": "sopophorousbean",
+        "quantity": 1
+      },
+      {
+        "name": "butterscotch",
+        "quantity": 1
+      },
+      {
+        "name": "hermitcrabshell",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Exstimulo Potion",
+    "asset": "Exstimulo_weak.png",
+    "ingredients": [
+      {
+        "name": "bitterroot",
+        "quantity": 1
+      },
+      {
+        "name": "reemblood",
+        "quantity": 1
+      },
+      {
+        "name": "snowdrop",
+        "quantity": 1
+      },
+      {
+        "name": "granianhair",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Healing Potion",
+    "asset": "HealingPotion.png",
+    "ingredients": [
+      {
+        "name": "wormwood",
+        "quantity": 1
+      },
+      {
+        "name": "bubotuberpus",
+        "quantity": 3
+      },
+      {
+        "name": "dittany",
+        "quantity": 2
+      },
+      {
+        "name": "dragonliver",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Invigoration Draught",
+    "asset": "InvigorationPotion_weak.png",
+    "ingredients": [
+      {
+        "name": "honeywater",
+        "quantity": 1
+      },
+      {
+        "name": "vervain",
+        "quantity": 1
+      },
+      {
+        "name": "scurvygrass",
+        "quantity": 1
+      },
+      {
+        "name": "lovage",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "name": "Potent Exstimulo Potion",
+    "asset": "Exstimulo_strong.png",
+    "ingredients": [
+      {
+        "name": "bitterroot",
+        "quantity": 4
+      },
+      {
+        "name": "snowdrop",
+        "quantity": 6
+      },
+      {
+        "name": "reemblood",
+        "quantity": 2
+      },
+      {
+        "name": "unicornhair",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Strong Exstimulo Potion",
+    "asset": "Exstimulo.png",
+    "ingredients": [
+      {
+        "name": "bitterroot",
+        "quantity": 3
+      },
+      {
+        "name": "snowdrop",
+        "quantity": 4
+      },
+      {
+        "name": "abraxanhair",
+        "quantity": 1
+      },
+      {
+        "name": "reemblood",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Strong Invigoration Draught",
+    "asset": "InvigorationPotion.png",
+    "ingredients": [
+      {
+        "name": "honeywater",
+        "quantity": 1
+      },
+      {
+        "name": "vervain",
+        "quantity": 1
+      },
+      {
+        "name": "scurvygrass",
+        "quantity": 1
+      },
+      {
+        "name": "sneezewort",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "name": "Wit-Sharpening Potion",
+    "asset": "WitSharpening.png",
+    "ingredients": [
+      {
+        "name": "gingerroot",
+        "quantity": 4
+      },
+      {
+        "name": "newtspleen",
+        "quantity": 3
+      },
+      {
+        "name": "groundscarabbeetles",
+        "quantity": 1
+      },
+      {
+        "name": "armadillobile",
+        "quantity": 1
+      }
+    ]
+  }
+]
