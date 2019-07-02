@@ -60,21 +60,26 @@ export class AppComponent implements OnInit {
     this.localStorageService.savePotionVisibility(this.hidePotions);
   };
 
+  totalIngredients(): any {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    return Object.values(this.ingredientCount).reduce(reducer);
+  }
+
   processExcess(ingredientList): void {
     ingredientList.forEach(i => {
       if(i.canToss > 0) {
-        if(!this.excessMap[i.name]) {
-          //add more properties here if you want to filter on them
-          this.excessMap[i.name] = {
-            canToss: i.canToss,
-            isGreenhouse: i.isGreenhouse,
-            rarity: i.rarity,
-            mostCanMake: i.mostCanMake,
-            canBeMade: i.mostCanMake > 0
-          };
-        } else {
-          //TODO: Handle ingredients used in multiple recipes (e.g. Exstimulo potions), use Math.min?
-          this.excessMap[i.name].canToss = i.canToss;
+        //TODO: Handle ingredients used in multiple recipes (e.g. Exstimulo potions), use Math.min?
+        //add more properties here if you want to filter on them
+        this.excessMap[i.name] = {
+          canToss: i.canToss,
+          isGreenhouse: i.isGreenhouse,
+          rarity: i.rarity,
+          mostCanMake: i.mostCanMake,
+          canBeMade: i.mostCanMake > 0
+        };
+      } else {
+        if(this.excessMap[i.name]) {
+          delete this.excessMap[i.name];
         }
       }
     });

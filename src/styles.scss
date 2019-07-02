@@ -1,3 +1,68 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$herbology-primary-palette: (
+  50 : #e4e7ea,
+  100 : #bbc3ca,
+  200 : #8e9ba6,
+  300 : #607282,
+  400 : #3e5468,
+  500 : #1c364d,
+  600 : #193046,
+  700 : #14293d,
+  800 : #112234,
+  900 : #091625,
+  A100 : #63a1ff,
+  A200 : #3083ff,
+  A400 : #0065fc,
+  A700 : #005ae2,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$herbology-primary: mat-palette($herbology-primary-palette);
+$herbology-accent: mat-palette($mat-amber, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$herbology-warn: mat-palette($mat-deep-orange);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$herbology-theme: mat-dark-theme($herbology-primary, $herbology-accent, $herbology-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($herbology-theme);
+
 /* You can add global styles to this file, and also import other style files */
 @import "variables";
 .flex-wrapper {
@@ -10,3 +75,6 @@
 .hide {
   display: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

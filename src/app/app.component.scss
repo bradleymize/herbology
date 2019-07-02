@@ -1,9 +1,17 @@
+mat-sidenav-container {
+  height: 100vh;
+}
+mat-expansion-panel {
+  margin-top: 10px !important;
+}
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
 .potion-list {
   height: 52px;
 }
 .version {
-  float: right;
-  font-size: x-small;
+  font-size: small;
 }
 .ingredient-toss-list {
   list-style-type: none;

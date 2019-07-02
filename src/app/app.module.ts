@@ -7,6 +7,8 @@ import { IngredientComponent } from './components/ingredient/ingredient.componen
 import {FormsModule} from "@angular/forms";
 import { PotionComponent } from './components/potion/potion.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatExpansionModule, MatSidenavModule, MatToolbarModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,12 @@ import { FilterPipe } from './pipes/filter.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
