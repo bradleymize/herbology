@@ -9,18 +9,24 @@ import { PotionComponent } from './components/potion/potion.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatExpansionModule, MatSidenavModule, MatToolbarModule} from "@angular/material";
+import { TensorComponent } from './tensor/tensor.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IngredientComponent,
     PotionComponent,
-    FilterPipe
+    FilterPipe,
+    TensorComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,

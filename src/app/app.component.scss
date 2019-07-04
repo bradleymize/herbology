@@ -1,26 +1,14 @@
 mat-sidenav-container {
-  height: 100vh;
+  height: calc(100vh - 64px);
 }
-mat-expansion-panel {
-  margin-top: 10px !important;
+@media (max-width: 599px) {
+  mat-sidenav-container {
+    height: calc(100vh - 56px);
+  }
 }
 .toolbar-spacer {
   flex: 1 1 auto;
 }
-.potion-list {
-  height: 52px;
-}
 .version {
   font-size: small;
-}
-.ingredient-toss-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 0;
-}
-.text-bold {
-  font-weight: bold;
-}
-.strikethrough {
-  text-decoration: line-through;
 }

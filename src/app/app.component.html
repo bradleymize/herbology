@@ -5,57 +5,6 @@
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav-content>
-    <mat-accordion>
-      <mat-expansion-panel [expanded]="!hideIngredients">
-        <mat-expansion-panel-header (click)="toggleIngredients()">
-          <mat-panel-title>
-            {{hideIngredients ? 'Show' : 'Hide'}} Ingredients
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <form [ngClass]="{'hide': hideIngredients}">
-          <div class="flex-wrapper">
-            <div *ngFor="let item of ingredients" class="wrapper-item">
-              <app-ingredient [item]="item" (click)="increment(item)"></app-ingredient>
-              <input [name]="item.key" type="number" class="ingredient-input" (input)="updateLocalStorage($event.target)" [(ngModel)]="ingredientCount[item.key]">
-            </div>
-          </div>
-        </form>
-        Total: {{totalIngredients()}}
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-accordion>
-      <mat-expansion-panel [expanded]="!hidePotions">
-        <mat-expansion-panel-header (click)="togglePotions()">
-          <mat-panel-title>
-            {{hidePotions ? 'Show' : 'Hide'}} Potion List
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <div [ngClass]="{'hide': hidePotions}">
-          <div *ngFor="let item of potions" class="potion-list">
-            <app-potion [potion]="item" [vault]="ingredientCount" (excessIngredients)="processExcess($event)"></app-potion>
-          </div>
-        </div>
-      </mat-expansion-panel>
-    </mat-accordion>
-
-    <p>
-      Can safely toss in order of rarity:
-    </p>
-    <ul class="ingredient-toss-list">
-      <li><span class="text-bold">Collected from greenhouses:</span></li>
-      <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: true, canBeMade: true}">{{item.value.canToss}} {{item.key}}</li>
-    </ul>
-    <ul class="ingredient-toss-list">
-      <li><span class="text-bold">Collected from the map:</span></li>
-      <li><span class="text-bold">Common:</span></li>
-      <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: false, rarity: 'common', canBeMade: true}">{{item.value.canToss}} {{item.key}}</li>
-      <li>&nbsp;</li>
-      <li><span class="text-bold">Uncommon:</span></li>
-      <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: false, rarity: 'uncommon', canBeMade: true}">{{item.value.canToss}} {{item.key}}</li>
-      <li>&nbsp;</li>
-      <li><span class="text-bold">Rare: DON'T GET RID OF THESE</span></li>
-      <li *ngFor="let item of excessMap | keyvalue | filter:{isGreenhouse: false, rarity: 'rare', canBeMade: true}" class="strikethrough">{{item.value.canToss}} {{item.key}}</li>
-    </ul>
-    Note: If a potion is missing an ingredient, this tool will not tell you to toss any ingredients from that potion. Toss at your own discretion.
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
