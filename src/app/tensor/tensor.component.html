@@ -29,6 +29,7 @@
       <input id="train-epochs" value="3">
     </div>
 
+    <button (click)="createHPWUConvModel()">HPWU model</button>
     <button (click)="start()" [disabled]="initialized">Initialize</button>
     <button id="train" [disabled]="!ready">Load Data and Train Model</button>
   </section>

@@ -5,6 +5,7 @@ import * as tf from '@tensorflow/tfjs';
 // It is a useful example of how you could create your own data manager class
 // for arbitrary data though. It's worth a look :)
 import {MnistData} from './data';
+import {IngredientService} from '../services/ingredient.service';
 
 @Component({
   selector: 'app-tensor',
@@ -18,15 +19,17 @@ export class TensorComponent {
   ready = false;
   readonly IMAGE_H = 28;
   readonly IMAGE_W = 28;
-  readonly SAVE_PATH= 'indexeddb://number-model';
+  readonly SAVE_PATH = 'indexeddb://number-model';
 
-  constructor() {}
+  constructor(
+    private ingredientService: IngredientService
+  ) {}
 
   async start() {
     this.initialized = true;
-    console.log("Loading ui module...");
+    console.log('Loading ui module...');
     this.ui = await import('./ui');
-    console.log("UI module loaded.");
+    console.log('UI module loaded.');
     this.ready = true;
     this.ui.setTrainButtonCallback(async () => {
       this.ui.logStatus('Loading MNIST data...');
@@ -35,9 +38,9 @@ export class TensorComponent {
       let model;
       try {
         model = await tf.loadLayersModel(this.SAVE_PATH);
-      } catch(e) {}
+      } catch (e) {}
 
-      if(model) {
+      if (model) {
         console.log('Loaded existing model:');
         this.ui.logStatus('Loaded existing model.');
         model.summary();
@@ -56,7 +59,89 @@ export class TensorComponent {
 
   async load() {
     this.data = new MnistData();
-    <any>await this.data.load();
+    return await this.data.load() as any;
+  }
+
+  async createHPWUConvModel() {
+    // TODO: INGREDIENTS.length + 10 (0-9 number recognition)
+    const INGREDIENTS = await this.ingredientService.list().toPromise();
+    const model = tf.sequential();
+    model.add(tf.layers.conv2d({
+      inputShape: [this.IMAGE_H, this.IMAGE_W, 1],
+      kernelSize: 3,
+      filters: 16,
+      activation: 'relu'
+    }));
+    model.add(tf.layers.maxPooling2d({poolSize: 2, strides: 2}));
+    model.add(tf.layers.conv2d({kernelSize: 3, filters: 32, activation: 'relu'}));
+    model.add(tf.layers.maxPooling2d({poolSize: 2, strides: 2}));
+    model.add(tf.layers.conv2d({kernelSize: 3, filters: 32, activation: 'relu'}));
+    model.add(tf.layers.flatten({}));
+    model.add(tf.layers.dense({units: 64, activation: 'relu'}));
+    model.add(tf.layers.dense({units: INGREDIENTS.length, activation: 'softmax'}));
+    return model;
+  }
+
+  async trainHPWU(model, onIterationFn) {
+    this.ui.logStatus('Training model...');
+    const optimizer = 'rmsprop';
+    model.compile({
+      optimizer,
+      loss: 'categoricalCrossentropy',
+      metrics: ['accuracy'],
+    });
+    const batchSize = 320; // TODO: REVISIT THIS NUMBER
+    const validationSplit = 0.15;
+    const trainEpochs = this.ui.getTrainEpochs(); // TODO: Research this
+    let trainBatchCount = 0;
+    const trainData = this.data.getTrainData(); // TODO: Update these
+    const testData = this.data.getTestData();   // TODO: Update these
+    const totalNumBatches =
+      Math.ceil(trainData.xs.shape[0] * (1 - validationSplit) / batchSize) *
+      trainEpochs;
+
+    let valAcc;
+    await model.fit(trainData.xs, trainData.labels, {
+      batchSize,
+      validationSplit,
+      epochs: trainEpochs,
+      // TODO: Callbacks not needed, only updates UI
+      callbacks: {
+        onBatchEnd: async (batch, logs) => {
+          trainBatchCount++;
+          this.ui.logStatus(
+            `Training... (` +
+            `${(trainBatchCount / totalNumBatches * 100).toFixed(1)}%` +
+            ` complete). To stop training, refresh or close page.`);
+          this.ui.plotLoss(trainBatchCount, logs.loss, 'train');
+          this.ui.plotAccuracy(trainBatchCount, logs.acc, 'train');
+          if (onIterationFn && batch % 10 === 0) {
+            onIterationFn('onBatchEnd', batch, logs);
+          }
+          await tf.nextFrame();
+        },
+        onEpochEnd: async (epoch, logs) => {
+          valAcc = logs.val_acc;
+          this.ui.plotLoss(trainBatchCount, logs.val_loss, 'validation');
+          this.ui.plotAccuracy(trainBatchCount, logs.val_acc, 'validation');
+          if (onIterationFn) {
+            onIterationFn('onEpochEnd', epoch, logs);
+          }
+          await tf.nextFrame();
+        }
+      }
+    });
+
+    console.log('Saving model to indexeddb...');
+    await model.save(this.SAVE_PATH);
+    console.log('Model saved.');
+
+    const testResult = model.evaluate(testData.xs, testData.labels);
+    const testAccPercent = testResult[1].dataSync()[0] * 100;
+    const finalValAccPercent = valAcc * 100;
+    this.ui.logStatus(
+      `Final validation accuracy: ${finalValAccPercent.toFixed(1)}%; ` +
+      `Final test accuracy: ${testAccPercent.toFixed(1)}%`);
   }
 
   /**
