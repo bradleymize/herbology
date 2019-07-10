@@ -12,6 +12,7 @@ import {MatButtonModule, MatExpansionModule, MatSidenavModule, MatToolbarModule}
 import { TensorComponent } from './tensor/tensor.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { IndexComponent } from './index/index.component';
+import { ImageTestComponent } from './test/image-test/image-test.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IndexComponent } from './index/index.component';
     PotionComponent,
     FilterPipe,
     TensorComponent,
-    IndexComponent
+    IndexComponent,
+    ImageTestComponent
   ],
   imports: [
     BrowserModule,
